@@ -4,6 +4,10 @@
 
 TaskJoy is a smart, AI-powered task manager that transforms how you organize your life. No more manual entries—just type what you need, and AI handles the rest. Whether you're organizing your day, managing a project, or brainstorming ideas, TaskJoy makes productivity effortless.
 
+## 🔗 Links
+
+- [Live Demo](https://task-joy.vercel.app/)
+
 ![TaskJoy Banner](src/assets/TaskJoy_Dashboard.png)
 
 ## ✨ Features
@@ -199,9 +203,6 @@ If you have any questions or need help:
   <p>⭐ Don't forget to star this repository if you found it helpful!</p>
 </div>
 
-## 🔗 Links
-
-- [Live Demo](https://taskjoy-demo.vercel.app) *(Coming Soon)*
 
 ---
 
