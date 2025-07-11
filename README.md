@@ -4,7 +4,7 @@
 
 TaskJoy is a smart, AI-powered task manager that transforms how you organize your life. No more manual entries—just type what you need, and AI handles the rest. Whether you're organizing your day, managing a project, or brainstorming ideas, TaskJoy makes productivity effortless.
 
-![TaskJoy Banner](/TaskJoy/src/assets/TaskJoy_Dashboard.png)
+![TaskJoy Banner](src/assets/TaskJoy_Dashboard.png)
 
 ## ✨ Features
 
@@ -92,13 +92,13 @@ TaskJoy is a smart, AI-powered task manager that transforms how you organize you
 
 
 ### Task Management
-![Task Management](/TaskJoy/src/assets/Front_Page_Image.png)
+![Task Management](src/assets/Front_Page_Image.png)
 
 ### AI Task Generation
-![AI Generation](/TaskJoy/src/assets/TaskJoy_AI_Creation.png)
+![AI Generation](src/assets/TaskJoy_AI_Creation.png)
 
 ### All Projects
-![All Project Section](/TaskJoy/src/assets/TaskJoy_ALLProjects.png)
+![All Projects](src/assets/TaskJoy_ALLProjects.png)
 
 ## 🤝 Contributing
 
