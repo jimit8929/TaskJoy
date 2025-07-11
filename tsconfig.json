@@ -1,0 +1,18 @@
+
+  {
+  "compilerOptions": {
+    "forceConsistentCasingInFileNames": true, // ⇒ catch wrong‐cased imports across OSes
+    "strict": true ,  // ⇒ turn on all strict-type checks
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["./src/*"]
+    }
+                            
+  },
+  "files": [],
+  "references": [
+    { "path": "./tsconfig.app.json" },
+    { "path": "./tsconfig.node.json" }
+  ],
+   
+}
