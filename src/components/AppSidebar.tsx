@@ -22,6 +22,8 @@ import {
   Hash,
   MoreHorizontal,
   Plus,
+  Sun,
+  Moon
 } from 'lucide-react';
 import { SIDEBAR_LINKS } from '@/constants';
 import {
@@ -44,19 +46,24 @@ import ProjectActionMenu from './ProjectActionMenu';
  */
 import { useSidebar } from '@/components/ui/sidebar';
 import { useProjects } from '@/contexts/ProjectContext';
+import { useTheme } from '@/hooks/use-theme'; 
 
 /**
- * 
+ *
  * Types
  */
 import type { AppLoaderData } from '@/routes/loaders/appLoader';
+import { Button } from './ui/button';
 
 const AppSidebar = () => {
   const location = useLocation();
   const { isMobile, setOpenMobile } = useSidebar();
   const projects = useProjects();
 
-  const {taskCounts} = useLoaderData() as AppLoaderData
+  const { taskCounts } = useLoaderData() as AppLoaderData;
+
+  const { theme, toggleTheme } = useTheme();
+  const isDark = theme === 'dark';
 
   return (
     <Sidebar>
@@ -98,17 +105,19 @@ const AppSidebar = () => {
                   </SidebarMenuButton>
 
                   {/* show task count in inboxmenu items */}
-                  {item.href === "/app/inbox" && Boolean(taskCounts.inboxTasks) && (
-                    <SidebarMenuBadge>
-                      {taskCounts.inboxTasks}
-                    </SidebarMenuBadge>
-                  )}
+                  {item.href === '/app/inbox' &&
+                    Boolean(taskCounts.inboxTasks) && (
+                      <SidebarMenuBadge>
+                        {taskCounts.inboxTasks}
+                      </SidebarMenuBadge>
+                    )}
 
-                  {item.href === "/app/today" && Boolean(taskCounts.todayTasks) && (
-                    <SidebarMenuBadge>
-                      {taskCounts.todayTasks}
-                    </SidebarMenuBadge>
-                  )}
+                  {item.href === '/app/today' &&
+                    Boolean(taskCounts.todayTasks) && (
+                      <SidebarMenuBadge>
+                        {taskCounts.todayTasks}
+                      </SidebarMenuBadge>
+                    )}
                 </SidebarMenuItem>
               ))}
             </SidebarMenu>
@@ -218,20 +227,32 @@ const AppSidebar = () => {
         </Collapsible>
       </SidebarContent>
 
-      <SidebarFooter className='flex items-start justify-center px-6 h-20 scale-110'>
-        <UserButton
-          showName
-          appearance={{
-            elements: {
-              rootBox: 'w-full h-full hover:scale-105 transition duration-300 linear',
-              userButtonTrigger:
-                '!shadow-none w-full justify-start p-2 rounded-md hover:bg-sidebar-accent',
-              userButtonBox: 'flex-row-reverse shadow-none gap-2',
-              userButtonOuterIdentifier: 'ps-0',
-              popoverBox: 'pointer-events-auto',
-            },
-          }}
-        />
+      <SidebarFooter className='flex items-center justify-between px-6 w-full'>
+        <div className='flex items-center gap-4 w-full justify-between'>
+          <UserButton
+            showName
+            appearance={{
+              elements: {
+                rootBox:
+                  'w-full hover:scale-105 transition duration-300 linear',
+                userButtonTrigger:
+                  '!shadow-none w-full justify-start p-2 rounded-md hover:bg-sidebar-accent',
+                userButtonBox: 'flex-row-reverse shadow-none gap-2 text-foreground',
+                userButtonOuterIdentifier: 'ps-0',
+                popoverBox: 'pointer-events-auto',
+              },
+            }}
+          />
+
+          <Button
+            variant="outline"
+            size="icon"
+            className='cursor-pointer hover:scale-110 transition-all duration-200'
+            onClick={toggleTheme}
+          >
+            {isDark ? <Sun /> : <Moon />}
+          </Button>
+        </div>
       </SidebarFooter>
     </Sidebar>
   );
